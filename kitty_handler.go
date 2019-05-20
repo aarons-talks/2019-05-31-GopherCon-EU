@@ -3,21 +3,29 @@ package main
 import (
 	"fmt"
 	"net/http"
+
+	"github.com/gin-gonic/gin"
 )
 
 func kittyHandler(c *gin.Context) {
-	cats = []string{
-		"https://pbs.twimg.com/media/CZwt9t1WYAELLfX.jpg",
-		"https://top13.net/wp-content/uploads/2015/10/perfectly-timed-cat-photos-funny-fb.jpg",
-		"https://fthmb.tqn.com/cD0PNhMM0BxevlBvAgD1ntpQLac=/3558x2363/filters:fill(auto,1)/Cat-rolling-GettyImages-165893132-58ac5ef05f9b58a3c90a144f.jpg",
-		"http://1.bp.blogspot.com/-cnxXgWn146M/UAcvCGngvDI/AAAAAAAAA9s/yCzePisIlUM/s1600/catss.jpg",
-		"https://i.ytimg.com/vi/7OD55d6iRCQ/maxresdefault.jpg",
+	cats := []string{
+		"/img/kitties/1.jpg",
+		"/img/kitties/2.jpg",
+		"/img/kitties/3.jpg",
+		"/img/kitties/4.jpg",
+		"/img/kitties/5.jpg",
+		"/img/kitties/6.jpg",
 	}
-	randCat := randStr(cats)
-	return c.String(http.StatusOK, fmt.Sprintf(`<html>
+	htmlStr := fmt.Sprintf(`<html>
 	<head></head>
 	<body>
-	<img src="%s" />
+	<center>
+	<img src="%s" width="1000"/>
+	</center>
 	</body>
-	</html>`, randCat))
+	</html>`, randStr(cats))
+	c.Writer.Header().Set("Content-Type", "text/html")
+	c.Writer.WriteHeader(http.StatusOK)
+	c.Writer.WriteHeader(http.StatusOK)
+	c.Writer.Write([]byte(htmlStr))
 }
