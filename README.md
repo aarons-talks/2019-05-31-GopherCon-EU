@@ -1,6 +1,6 @@
 # Building An App with Go Modules and Athens :tada:
 
-Hey Gophers! We're gonna build an awesome webapp with [Gin](https://github.com/gin-gonic/gin). Well, it's pretty basic but it shows cat pictures so it's still pretty awesome :grinning:.
+Hey Gophers! We're gonna build an awesome webapp with [Gin](https://github.com/gin-gonic/gin). Well, it's pretty basic but it shows cat and dog pictures so it's still pretty awesome :grinning:.
 
 The cool part though? Instead of pulling all my webapp's dependencies directly from version control systems like GitHub (which we've always been doing in the past), we're gonna build it using [Athens](https://docs.gomods.io).
 
@@ -8,9 +8,9 @@ In fact, we're actually gonna do the build in _three_ different ways! And we'll 
 
 >I gave this demo at [GopherCon EU 2019](https://www.gophercon.es/#aaron-schlesinger-anchor) in the session titled "The Athens Project - A Proxy Server for Go Modules".
 
-![athens banner](./athens-banner.jpeg)
+![athens banner](https://d33wubrfki0l68.cloudfront.net/517b1a47a4e75a20cbddd06e936d73837d3c2297/c84eb/banner.png)
 
-# About the WebApp
+# About the Web App
 
 The web application we're going to build is pretty standard. I built a little server using [gin](https://github.com/gin-gonic/gin) as the framework, and it shows some HTML pages with cat pictures on them. 
 
@@ -76,7 +76,7 @@ And then start up the server again too! (Don't forget to shut down the old one):
 $ go run .
 ```
 
-## Third Way: Use Your Athens While Offline!
+## Third Way: Use Your Athens While Offline :scream:
 
 Like I mentioned in the last step, Athens is meant to run inside of organizations to serve up their private code. To do that, it keeps its own database of _all_ the code you request from it - public and private. That means that if you have an Athens server running and you do a build against it, you can shut down your internet connection and do the same build against it without an internet connection!
 
@@ -90,7 +90,7 @@ Next, clear out your cache again:
 $ sudo rm -rf $GOPATH/pkg/mod
 ```
 
-And then, **shut down your internet connection**.
+And then, **shut down your internet connection** :see_no_evil:.
 
 And finally, do the build & run:
 
